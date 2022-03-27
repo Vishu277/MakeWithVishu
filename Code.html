@@ -548,6 +548,63 @@ footer .bottom-details .bottom_text{
   height: 150px;
   background: #212121;
 }
+.text-boxes{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 30px;
+  margin-bottom: 60px;
+}
+.text-boxes .text-box{
+  height: 380px;
+  max-width: 660px;
+  width: 100%;
+  margin: 55px 0;
+}
+.text-boxes .text-box .topic{
+  font-size: 18px;
+  font-weight: 600;
+  color: #265df2;
+  margin: 4px;
+}
+.text-boxes .text-box textarea{
+  height: 100%;
+  width: 100%;
+  padding: 30px;
+  font-size: 15px;
+  font-weight: 400;
+  outline: none;
+  border: 1px solid #265df2;
+  border-radius: 8px;
+  background: #e7edfe;
+}
+.text-box textarea::-webkit-scrollbar{
+  display: none;
+}
+.text-boxes .text-box button{
+  height: 45px;
+  width: 155px;
+  color: #fff;
+  background: #265df2;
+  outline: none;
+  border: none;
+  border-radius: 8px;
+  font-size: 17px;
+  font-weight: 400;
+  margin: 8px 0;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+.text-boxes .text-box button:hover{
+  background: #0e4bf1;
+}
+@media (max-width: 400px) {
+  .text-boxes .text-box button{
+    width: 100%;
+  }
+}
      </style>
     <title>How to make a Card in Html</title>
 </head>
@@ -595,6 +652,93 @@ footer .bottom-details .bottom_text{
     <div class="v">
       
     </div>
+      <div class="text-boxes">
+    <div class="text-box HTMLBox">
+      <div class="topic">HTML Code:</div>
+      <textarea id="HTMLBox" readonly >
+        <!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>card</title>
+    <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <div class="card-image card-1">
+          
+        </div>
+        <h1 style="font-size: 20px; text-align: center;">Card Introdution</h1>
+        <p style="font-size: 11px;">I am vishu sagar </p>
+        <a href="#">READ MORE</a>
+      </div>
+    </div>
+  </body>
+</html>
+      </textarea>
+      <button id="HTMLButton">Copy Codes</button>
+    </div>
+    <div class="text-box CSSBox">
+      <div class="topic">CSS Code:</div>
+      <textarea id="CSSBox" readonly >
+            .container{
+        display: flex;
+        flex-wrap: wrap;
+        padding: 10px;
+        justify-content: center;
+      }
+      .container > div{
+        background: white;
+        width: 270px;
+        margin: 10px;
+      }
+      .card{
+        box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3), 0 7px 21px 0 rgba(0, 0, 0, 0.20);
+        box-sizing: border-box;
+        font-family: Sans-Serif;
+        border-radius: 15px;
+      }
+      .card-image{
+        background: #00ccff;
+        height: 150px;
+        margin-bottom: 15px;
+        background-size: cover;
+        border-radius: 15px 15px 0 0;
+      }
+      .card-1{
+        background-image: url('im.jpg');
+      }
+      .card p{
+        padding: 12px;
+        font-size: 10.5px;
+        font-weight: 499;
+      }
+      .card a{
+        background: black;
+        color: white;
+        padding: 15px 20px;
+        display: block;
+        text-align: center;
+        margin: 20px 50px;
+      }
+      .card:hover{
+        background: #212121;
+        color: white;
+        cursor: pointer;
+        transform: scale(1.72);
+      }
+      </textarea>
+      <button id="CSSButton">Copy Codes</button>
+    </div>
+    <div class="text-box JSBox">
+      <div class="topic">JavaScript Code:</div>
+      <textarea id="JSBox" readonly >
+        Add JavaScript Code here
+      </textarea>
+      <button id="JSButton">Copy Codes</button>
+    </div>
+  </div>
       <footer>
     <div class="content">
       <div class="top">
@@ -701,7 +845,34 @@ body.addEventListener("click" , e =>{
         nav.classList.remove("active");
     }
 });
+  // HTML BOx JS Code
+    let HTMLBox = document.getElementById("HTMLBox");
+    let HTMLButton = document.getElementById("HTMLButton");
 
+    HTMLButton.onclick = function() {
+      HTMLBox.select();
+      document.execCommand("copy");
+      HTMLButton.innerText = "Codes Copied"
+    }
+
+    // CSS Box Js Code
+      let CSSBox = document.getElementById("CSSBox");
+      let CSSButton = document.getElementById("CSSButton");
+
+      CSSButton.onclick = function() {
+        CSSBox.select();
+        document.execCommand("copy");
+        CSSButton.innerText = "Codes Copied"
+      }
+    // JavaScript BOx JS Code
+      let JSBox = document.getElementById("JSBox");
+      let JSButton = document.getElementById("JSButton");
+
+      JSButton.onclick = function() {
+        JSBox.select();
+        document.execCommand("copy");
+        JSButton.innerText = "Codes Copied"
+      }
 </script>
 
 </body>
